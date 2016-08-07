@@ -11,7 +11,17 @@ import { identity } from 'lodash';
  */
 import reducer from './reducer';
 
-export default function configureStore( initialState ) {
+function bootstrap() {
+	return {
+		user: {
+			token: localStorage.userToken
+		}
+	};
+}
+
+export default function configureStore() {
+	const initialState = bootstrap();
+
 	return createStore( reducer, initialState, compose(
 		applyMiddleware( createMiddleware( History ), thunk ),
 		window.devToolsExtension ? window.devToolsExtension() : identity
