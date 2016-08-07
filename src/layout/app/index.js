@@ -8,13 +8,14 @@ import { h } from 'preact';
  */
 import Sidebar from 'layout/sidebar';
 import Inbox from 'layout/inbox';
+import Detail from 'layout/detail';
 
 export default function App() {
 	return (
 		<main className="app">
 			<Sidebar />
 			<Inbox />
-			App
+			<Detail />
 		</main>
 	);
 }
