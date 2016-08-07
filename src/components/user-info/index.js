@@ -2,11 +2,25 @@
  * External dependencies
  */
 import { h } from 'preact';
+import { connect } from 'preact-redux';
 
-export default function UserInfo() {
+/**
+ * Internal dependencies
+ */
+import QueryUser from 'components/query-user';
+import { getUser } from 'state/user/selectors';
+
+function UserInfo( { user } ) {
 	return (
 		<div className="user-info">
-			User Info
+			<QueryUser />
+			{ user ? user.login : null }
 		</div>
 	);
 }
+
+export default connect( ( state ) => {
+	return {
+		user: getUser( state )
+	};
+} )( UserInfo );
