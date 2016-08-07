@@ -1,5 +1,6 @@
 {
   "name": "stagecoach",
+  "description": "Inbox for GitHub events, filtered to your desired constraints",
   "version": "1.0.0",
   "scripts": {
     "build:dev": "webpack --config webpack.config.dev",
